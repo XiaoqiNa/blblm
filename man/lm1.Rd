@@ -6,6 +6,13 @@
 \usage{
 lm1(formula, data, freqs)
 }
+\arguments{
+\item{formula}{the linear regression model}
+
+\item{data}{data frame}
+
+\item{freqs}{weight}
+}
 \description{
 estimate the regression estimates based on given the number of repetitions
 }

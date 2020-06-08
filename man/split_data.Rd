@@ -6,6 +6,11 @@
 \usage{
 split_data(data, m)
 }
+\arguments{
+\item{data}{data frame}
+
+\item{m}{numeric, split data into m parts of approximated equal sizes}
+}
 \description{
 split data into m parts of approximated equal sizes
 }

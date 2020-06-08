@@ -4,11 +4,16 @@
 \name{blblm-package}
 \alias{blblm}
 \alias{blblm-package}
-\title{blblm: What the Package Does (Title Case)}
+\title{The Bag of Little Bootstraps for Linear Regression Model}
 \description{
-More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+blblm is to compute the bag of little bootstraps for linear regression model.
+    blblm can return the coefficient, sigma, confident interval and prodiction of the bootstraps for linear regression model, and also it can print out the model.
 }
 \details{
-Linear Regression with Little Bag of Bootstraps
+This package implement the linear regression with little bag of bootstraps by using blblm(formula,data,parallel,m,B)
+In this package, there are also corresponding functions from blblm, such as \code{coef.blblm}, \code{sigma.blblm},\code{confint.blblm}and \code{predict.blblm}
+}
+\author{
+\strong{Maintainer}: Xiaoqi Na \email{xna@ucdavis.edu}
+
 }

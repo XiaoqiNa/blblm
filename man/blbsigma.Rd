@@ -6,6 +6,9 @@
 \usage{
 blbsigma(fit)
 }
+\arguments{
+\item{fit}{The linear regression model}
+}
 \description{
 compute sigma from fit
 }

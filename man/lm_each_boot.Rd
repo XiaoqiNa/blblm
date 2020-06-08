@@ -6,6 +6,13 @@
 \usage{
 lm_each_boot(formula, data, n)
 }
+\arguments{
+\item{formula}{the linear regression model}
+
+\item{data}{data frame}
+
+\item{n}{numeric, length of the data frame}
+}
 \description{
 compute the regression estimates for a blb dataset
 }

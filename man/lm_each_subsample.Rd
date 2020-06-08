@@ -6,6 +6,15 @@
 \usage{
 lm_each_subsample(formula, data, n, B)
 }
+\arguments{
+\item{formula}{the linear regression model}
+
+\item{data}{data frame}
+
+\item{n}{numeric, length of the data frame}
+
+\item{B}{numeric, repeat the process B times}
+}
 \description{
 compute the estimates
 }

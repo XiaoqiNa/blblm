@@ -1,18 +1,26 @@
 Package: blblm
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Bag of Little Bootstraps for Linear Regression Model
 Version: 0.1.0
-Author: Who wrote it
+Authors@R:
+    person("Xiaoqi", "Na", email = "xna@ucdavis.edu", role = c("aut", "cre"))
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: blblm is to compute the bag of little bootstraps for linear regression model.
+    blblm can return the coefficient, sigma, confident interval and prodiction of the bootstraps for linear regression model, and also it can print out the model.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
 Imports: 
     purrr,
-    magrittr
+    magrittr,
+    furrr,
+    dplyr,
+    tidyr,
+    future
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
+VignetteBuilder: knitr
