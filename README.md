@@ -46,18 +46,13 @@ summary(fit)
 #> formula    3     formula call
 ```
 
-Computting the coefficient of the blblm via `coef.blblm`:
+Computting the coefficient of the blblm : `coef.blblm(fit)`
 
-coef.blblm(fit)
+Getting the confidence interval at the level alpha=0.05 of blblm:
+`confint.blblm(fit,parm = NULL, level = 0.95)`
 
-Getting the confidence interval at the level alpha=0.05 of blblm via
-`confint.blblm`:
-
-confint.blblm(fit,parm = NULL, level = 0.95)
-
-Computing the predict model for the blblm via `predict.blblm`:
-
-predict.blblm(fit,data.frame(Petal.Length=c(3.0,5.0),Petal.Width=c(0.1,1.1)),confidence=TRUE,level=0.95)
+Computing the predict model for the blblm:
+`predict.blblm(fit,data.frame(Petal.Length=c(3.0,5.0),Petal.Width=c(0.1,1.1)),confidence=TRUE,level=0.95)`
 
 ## For Logistic linear regression Model:
 
@@ -76,8 +71,8 @@ summary(fita)
 #> formula    3     formula call
 ```
 
-coef.blbglm(fita)
-
-confint.blbglm(fita,parm = NULL, level = 0.95)
-
-predict.blbglm(fita,data.frame(Petal.Length=c(3.0,5.0),Petal.Width=c(0.1,1.1)),confidence=TRUE,level=0.95)
+``` r
+# coef.blbglm(fita)
+# confint.blbglm(fita,parm = NULL, level = 0.95)
+# predict.blbglm(fita,data.frame(Petal.Length=c(3.0,5.0),Petal.Width=c(0.1,1.1)),confidence=TRUE,level=0.95)
+```
