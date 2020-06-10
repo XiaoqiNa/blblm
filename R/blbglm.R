@@ -14,7 +14,6 @@
 #' @param m numeric, split data into m parts of approximated equal sizes
 #' @param B numeric, repeat the process B times
 #'
-
 #' @export
 #'
 #' @examples
@@ -104,7 +103,7 @@ blbsigma <- function(fit) {
 #' @param ... Other arguments
 #'
 #' @export
-#' @method print blblm
+#' @method print blbglm
 print.blbglm <- function(x, ...) {
   cat("blbglm model:", capture.output(x$formula))
   cat("\n")
@@ -118,7 +117,7 @@ print.blbglm <- function(x, ...) {
 #' @param ... Other arguments
 #'
 #' @export
-#' @method sigma blblm
+#' @method sigma blbglm
 sigma.blbglm <- function(object, confidence = FALSE, level, ...) {
   est <- object$estimates
   sigma <- mean(map_dbl(est, ~ mean(future_map_dbl(., "sigma"))))
