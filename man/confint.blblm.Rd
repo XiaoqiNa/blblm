@@ -4,7 +4,7 @@
 \alias{confint.blblm}
 \title{Computing the confidence interval of blblm}
 \usage{
-\method{confint}{blblm}(object, parm = NULL, level = 0.95, ...)
+\method{confint}{blblm}(object, parm = NULL, level, ...)
 }
 \arguments{
 \item{object}{the fit of blblm}

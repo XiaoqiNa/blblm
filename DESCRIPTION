@@ -20,7 +20,8 @@ Imports:
     furrr,
     dplyr,
     tidyr,
-    future
+    future,
+    parallel
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
 VignetteBuilder: knitr

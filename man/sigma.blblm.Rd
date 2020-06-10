@@ -4,7 +4,7 @@
 \alias{sigma.blblm}
 \title{Computing the sigma of the blblm}
 \usage{
-\method{sigma}{blblm}(object, confidence = FALSE, level = 0.95, ...)
+\method{sigma}{blblm}(object, confidence = FALSE, level, ...)
 }
 \arguments{
 \item{object}{the fit of blblm}
