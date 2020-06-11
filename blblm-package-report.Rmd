@@ -1,15 +1,9 @@
 ---
-title: "blblm-vignette"
-output: rmarkdown::pdf_vignette
-vignette: >
-  %\VignetteIndexEntry{blblm-vignette}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+title: "blblm-package-Report"
+author: "Xiaoqi Na"
+date: "6/10/2020"
+output: html_document
 ---
-
-#### Author: Xiaoqi Na
-#### Email: xna@ucdavis.edu
-#### Date: 06/10/2020
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -22,11 +16,11 @@ knitr::opts_chunk$set(
 
 ## blblm & blbdlm
 
-## This package is a implemention of the bag of little bootstrap for the linear regression models and logistic linear regression model. While the idea of bag of bootstrap for normal dataset is prevalent, we want to figue out how can it implement for a regression model inside the datasets. This process combines the usage of bootstrap and subsamples together, and it can give users a more efficient way to compute the estimators of the linear regression model. Moreover, this package also allows users to use parallelization for their model, and they can choose how many CPUs they want to use. 
+### This package is a implemention of the bag of little bootstrap for the linear regression models and logistic linear regression model. While the idea of bag of bootstrap for normal dataset is prevalent, we want to figue out how can it implement for a regression model inside the datasets. This process combines the usage of bootstrap and subsamples together, and it can give users a more efficient way to compute the estimators of the linear regression model. Moreover, this package also allows users to use parallelization for their model, and they can choose how many CPUs they want to use. 
 
 # How does it work?
 
-## This is a common question for the blblm package. How does it work when we have a existing dataset? Firstly, split the dataset into m parts of approximated equal sizes, this procedure is called subsampling. Next, repeat the iternation of each subsamples B times by using replicate(). Then, we will get a blblm model from the procedures above. Eventually, we can compute the estimators of the the bag of little bootstrap for the linear regression models or logistic linear regression model, such as coefficients, sigma, confidence intervals and predictions for new data. 
+### This is a common question for the blblm package. How does it work when we have a existing dataset? Firstly, split the dataset into m parts of approximated equal sizes, this procedure is called subsampling. Next, repeat the iternation of each subsamples B times by using replicate(). Then, we will get a blblm model from the procedures above. Eventually, we can compute the estimators of the the bag of little bootstrap for the linear regression models or logistic linear regression model, such as coefficients, sigma, confidence intervals and predictions for new data. 
 
 
 
@@ -94,68 +88,3 @@ library(blblm)
 fit <- blblm(formula=Sepal.Length~Petal.Length+Petal.Width,data=iris,m=10,B=100,parallel=TRUE)
 summary(fit)
 ```
-
-`coef.blblm(fit)`
-
-`sigma.blblm(fit,confidence=TRUE,level=0.95)`
-
-`confint.blblm(fit,c("Petal.Length,Petal.Width"),level = 0.95,parm=NULL)`
-
-`predict.blblm(fit, data.frame(Petal.Length=c(3.0,5.0),Petal.Width=c(0.5,2.0)),confidence=TRUE,level=0.95)`
-
-### Logistic Linear Regression Model Example:
-
-```{r}
-fitglm <- blbglm(formula=Sepal.Length~Petal.Length+Petal.Width,data=iris,m=10,B=100,parallel=TRUE)
-summary(fitglm)
-```
-`coef.blbglm(fit)`
-
-`sigma.blbglm(fit,confidence=TRUE,level=0.95)`
-
-`confint.blbglm(fit,c("Petal.Length,Petal.Width"),level = 0.95,parm=NULL)`
-
-`predict.blbglm(fit, data.frame(Petal.Length=c(3.0,5.0),Petal.Width=c(0.5,2.0)),confidence=TRUE,level=0.95)`
-
-## Ancillary functions inside the packages
-
-### split_data()
-#### This function is to subsample the dataset by spliting the dataset into m parts of approximated equal sizes
-
-### lm1() & glm1()
-#### This function is to estimate the regression estimates based on given the number of repetitions, and it will be used in the `lm_each_boot()` or `glm_each_boot()` function.
-
-### lm_each_boot() & glm_each_boot()
-#### This function is to compute the regression estimates for a blb dataset, and this will be further used in the `lm_each_subsample` function.
-
-### lm_each_subsample() & glm_each_subsample()
-#### This function is to compute compute the estimates, and repeat it B times. And, this function is useful in `blblm()` or `blbglm` function.
-
-### There are also some other helpful functions computing the mean, lower and upper bound using for this blblm package.
-#### `mean_lwr_upr()`  `map_mean` `map_cbind` `map_rbind`
-
-
-
-# Additional informations
-### If users want to know more about the functions inside the packages, they can do
-`?blblm`
-
-`?blblm_parallel`
-
-`?coef.blblm`
-
-`?sigma.blblm` 
-
-`?confint.blblm`
-
-`?predict.blblm`
-### Also, similar for the logistic regression model, just change blblm to blbglm.
-
-
-# Reference
-## https://github.com/ucdavis-sta141c-sq-2020/sta141c-notes/tree/master/ch08-bootstrap
-## `lm` function in r
-
-
-
-
